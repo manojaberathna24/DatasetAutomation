@@ -1,8 +1,18 @@
-![Alt text](img.jpg.JPG)
+
+Try using streamlit :-  https://datasence.streamlit.app/
+
+Demo Video :-  https://drive.google.com/file/d/18jKZhAWmm4ZazScZtk1EhxNgsXEndZPk/view?usp=drive_link
+
+
 
 # DataSense AI - Neural Analysis Terminal
 
 A powerful Streamlit-based data analysis and machine learning platform with an advanced cyberpunk/hacker-themed interface. DataSense AI transforms raw data into actionable insights using cutting-edge analytics, machine learning algorithms, and artificial intelligence powered by Google Gemini AI.
+
+
+![Alt text](img.jpg.JPG)
+
+
 
 ## Table of Contents
 
