@@ -1,4 +1,4 @@
-![Alt text](img.jpgJPG)
+![Alt text](img.jpg.JPG)
 
 # DataSense AI - Neural Analysis Terminal
 
