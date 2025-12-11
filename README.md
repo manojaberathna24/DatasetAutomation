@@ -404,6 +404,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 **DataSense AI v2.0 - Terminal Edition**
 
-Powered by Streamlit & Gemini AI | Developed by Manoj Aberathna | 2024
+Powered by Streamlit & Gemini AI | Developed by Manoj Aberathna | 2025
 
 For issues, questions, or feature requests, please open an issue on GitHub.
