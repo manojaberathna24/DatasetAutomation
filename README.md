@@ -156,7 +156,7 @@ Before installing DataSense AI, ensure you have:
 Open your terminal or command prompt and run:
 
 ```bash
-git clone https://github.com/yourusername/datasense-ai.git
+git clone https://github.com/manojaberathna24/DatasetAutomation.git
 cd datasense-ai
 ```
 
