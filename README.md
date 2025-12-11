@@ -1,3 +1,5 @@
+![Alt text](img.jpg)
+
 # DataSense AI - Neural Analysis Terminal
 
 A powerful Streamlit-based data analysis and machine learning platform with an advanced cyberpunk/hacker-themed interface. DataSense AI transforms raw data into actionable insights using cutting-edge analytics, machine learning algorithms, and artificial intelligence powered by Google Gemini AI.
