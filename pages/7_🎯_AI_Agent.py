@@ -156,6 +156,62 @@ if 'ai_insights' in st.session_state:
             st.session_state.run_analysis = True
             st.rerun()
 
+    # NEW INTERACTIVE CHAT SECTION
+    st.markdown("---")
+    st.markdown("### 💬 Ask the AI Agent")
+    st.info("The Agent has analyzed the dataset. Now you can ask it to perform specific tasks, generate custom code, or answer questions about your data!")
+    
+    # Initialize agent chat history if not exists
+    if 'agent_chat_history' not in st.session_state:
+        st.session_state.agent_chat_history = []
+        
+    # Display chat history
+    for msg in st.session_state.agent_chat_history:
+        with st.chat_message(msg["role"], avatar="🤖" if msg["role"] == "assistant" else "👤"):
+            st.markdown(msg["content"])
+            if msg.get("code"):
+                with st.expander("Show Python Code", expanded=False):
+                    st.code(msg["code"], language="python")
+            if msg.get("data") is not None:
+                if isinstance(msg["data"], pd.DataFrame):
+                    st.dataframe(msg["data"])
+                else:
+                    st.write(msg["data"])
+
+    # Chat input
+    if prompt := st.chat_input("Ask the Agent to do something with your data... (e.g. 'Show the top 5 earners')"):
+        # Add user message to state and display
+        st.session_state.agent_chat_history.append({"role": "user", "content": prompt})
+        with st.chat_message("user", avatar="👤"):
+            st.markdown(prompt)
+            
+        with st.chat_message("assistant", avatar="🤖"):
+            with st.spinner("Agent is thinking and writing code..."):
+                response = ai_chat.ask_question(df, prompt)
+                
+                if isinstance(response, dict):
+                    st.markdown(response["answer"])
+                    
+                    if response.get("code"):
+                        with st.expander("Show Executed Python Code", expanded=False):
+                            st.code(response["code"], language="python")
+                            
+                    if response.get("data") is not None:
+                        if isinstance(response["data"], pd.DataFrame):
+                            st.dataframe(response["data"])
+                        else:
+                            st.write(response["data"])
+                            
+                    st.session_state.agent_chat_history.append({
+                        "role": "assistant",
+                        "content": response["answer"],
+                        "code": response.get("code"),
+                        "data": response.get("data")
+                    })
+                else:
+                    st.markdown(response)
+                    st.session_state.agent_chat_history.append({"role": "assistant", "content": response})
+
 else:
     # Show placeholder
     st.info("Click 'Analyze Dataset' in the sidebar to start AI analysis")
