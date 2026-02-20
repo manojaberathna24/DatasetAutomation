@@ -187,7 +187,7 @@ if 'ai_insights' in st.session_state:
             
         with st.chat_message("assistant", avatar="🤖"):
             with st.spinner("Agent is thinking and writing code..."):
-                response = ai_chat.ask_question(df, prompt)
+                response = ai_chat.query_data(df, prompt)
                 
                 if isinstance(response, dict):
                     st.markdown(response["answer"])
