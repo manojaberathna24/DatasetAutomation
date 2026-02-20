@@ -1,0 +1,29 @@
+# Ignore environment variables
+.env
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data storage (local only)
+data_storage/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
